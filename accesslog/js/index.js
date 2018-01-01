@@ -20,6 +20,14 @@ window.onload = function() {
             slideChangeTransitionStart: function(swiper) {
 
                 var n = this.activeIndex; //Swiper的当前索引
+
+                var upIcon = document.getElementsByClassName('up-icon')[0];//控制向上滑提示图标 显示隐藏
+                if(n==9){
+                    upIcon.style.display="none";
+                }else{
+                    upIcon.style.display="block";
+                };
+
                 switch (n) {
                     case 4:
                         myChart1.clear();
@@ -47,12 +55,9 @@ window.onload = function() {
                     case 9:
                         myChart6.clear();
                         myChart6.setOption(option6);
-                        
                         break;
-
-
                     default:
-                        console.log(n)
+                        console.log(n);
                         break;
                 }
 
